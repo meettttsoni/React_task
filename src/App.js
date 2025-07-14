@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Props from './components/Props';
+import Obj from './components/Obj';
+import Countt from './components/Countt';
+import Site from './components/Site';
+import Counter from './Counter';
+import Multiobj from './components/Multiobj';
+import UserManagement from './UserManagement';
 
-function App() {
+
+const App = () => {
+  const user={
+    name:'meet soni',
+    age:20,
+    city:'ahd'
+
+  };
+  
+  const [list, setList] = useState([10, 20, 30]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Test /> */}
+       {/* <Props list={list} user={user}/> */}
+      {/* <Obj/> */}
+      <Countt/>
+      <Counter/> 
+      {/* <Multiobj/>  */}
+     {/* <UserManagement/> */}
+      <Site/>
     </div>
   );
-}
+};
 
 export default App;
+
