@@ -1,120 +1,113 @@
-import React, { useState } from "react";
-import "./components/UserManagement.css";
+import React, { useState } from 'react';
 
-const UserManagement = () => {
+function UserManagement() {
   const [users, setUsers] = useState([]);
-  const [formData, setFormData] = useState({ name: "", email: "", age: "" });
-  const [editIndex, setEditIndex] = useState(null);
+  const [form, setForm] = useState({
+    firstName: '',
+    lastName: '',
+    profilePic: '',
+  });
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    const { name, email, age } = formData;
-    if (!name || !email || !age) return alert("Please fill all fields");
-
-    if (editIndex === null) {
-      setUsers([...users, formData]);
-    } else {
-      const updated = [...users];
-      updated[editIndex] = formData;
-      setUsers(updated);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!form.firstName || !form.lastName || !form.profilePic) {
+      alert("Please fill all fields");
+      return;
     }
-
-    setFormData({ name: "", email: "", age: "" });
-    setEditIndex(null);
+    setUsers([...users, form]);
+    setForm({ firstName: '', lastName: '', profilePic: '' });
+    setShowModal(false);
   };
 
-  const handleEdit = (index) => {
-    setFormData(users[index]);
-    setEditIndex(index);
-  };
-
-  const handleDelete = (index) => {
-    const filtered = users.filter((_, i) => i !== index);
-    setUsers(filtered);
-    if (editIndex === index) {
-      setFormData({ name: "", email: "", age: "" });
-      setEditIndex(null);
-    }
+  const deleteUser = (index) => {
+    const updated = users.filter((_, i) => i !== index);
+    setUsers(updated);
   };
 
   return (
-    <div className="app-container">
-      <div className="form-box">
-        <h2>User Management</h2>
+    <div>
+      <h2>User Management</h2>
+      <button onClick={() => setShowModal(true)}>+ Add New User</button>
 
-        <div className="input-group">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleChange}
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-          />
-          <input
-            type="number"
-            name="age"
-            placeholder="Age"
-            value={formData.age}
-            onChange={handleChange}
-          />
-          <button onClick={handleSubmit}>
-            {editIndex === null ? "Add" : "Update"}
-          </button>
+      {/* Modal */}
+      {showModal && (
+        <div>
+          <div>
+            <h3>Add User</h3>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                value={form.firstName}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={form.lastName}
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                name="profilePic"
+                placeholder="Profile Picture URL"
+                value={form.profilePic}
+                onChange={handleChange}
+              />
+              <div>
+                <button type="submit">Add</button>
+                <button type="button" onClick={() => setShowModal(false)}>Cancel</button>
+              </div>
+            </form>
+          </div>
         </div>
+      )}
 
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Age</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.length === 0 ? (
-              <tr>
-                <td colSpan="5">No users added</td>
+      {/* Table */}
+      <table border="1" cellPadding="10" style={{ marginTop: '20px' }}>
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.length === 0 ? (
+            <tr><td colSpan="4">No users added</td></tr>
+          ) : (
+            users.map((user, index) => (
+              <tr key={index}>
+                <td>
+                  <img
+                    src={user.profilePic}
+                    alt="profile"
+                    width="50"
+                    height="50"
+                    style={{ borderRadius: "50%" }}
+                  />
+                </td>
+                <td>{user.firstName}</td>
+                <td>{user.lastName}</td>
+                <td>
+                  <button onClick={() => deleteUser(index)}>Delete</button>
+                  <button disabled>Edit</button>
+                </td>
               </tr>
-            ) : (
-              users.map((user, index) => (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>{user.age}</td>
-                  <td>
-                    <button className="edit" onClick={() => handleEdit(index)}>
-                      Edit
-                    </button>
-                    <button
-                      className="delete"
-                      onClick={() => handleDelete(index)}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
-      <div className="background-animated"></div>
+            ))
+          )}
+        </tbody>
+      </table>
     </div>
   );
-};
+}
 
 export default UserManagement;
