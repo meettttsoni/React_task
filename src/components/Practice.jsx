@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 
 const Practice = () => {
-  const [data, setdata] = useState({ email: "", password: "" });
+  const [data, setdata] = useState({ email:'',
+  password:''});
   const [list, setlist] = useState([]);
   const [edit, setedit] = useState(null);
 
-  useEffect(() => {
-    const storedList = localStorage.getItem("userList");
-    if (storedList) {
-      setlist(JSON.parse(storedList));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("userList", JSON.stringify(list));
-  }, [list]);
 
   function handle(e) {
     setdata({ ...data, [e.target.name]: e.target.value });
@@ -71,3 +62,5 @@ const Practice = () => {
 };
 
 export default Practice;
+
+

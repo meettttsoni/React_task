@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Props from './components/Props';
 import Obj from './components/Obj';
 import Countt from './components/Countt';
@@ -15,17 +15,32 @@ import Timeruse from './components/Timeruse';
 import Todoref from './components/Todoref';
 import Focus from './components/Focus';
 import Formvali from './components/Formvali';
+import Textspeed from './components/Textspeed';
+import Practext from './components/Practext';
+import Todoprac from './components/Todoprac';
+import Withloading from './components/Withloading';
+import UserList from './components/UserList';
 
 
+const UserWith=Withloading(UserList)
 const App = () => {
-  const user={
-    name:'meet soni',
-    age:20,
-    city:'ahd'
+  const[loading,setloading]=useState(true)
+  const[user,setuser]=useState([])
 
-  };
-  
-  const [list, setList] = useState([10, 20, 30]);
+  useEffect(()=>{
+    setTimeout(()=>{
+      setuser([
+        {
+        id:1,name:'sun',
+      },
+      {
+        id:2,name:'an'
+      }
+      
+    ])
+    setloading(false)
+    },2000)
+  },[])
 
   return (
     <div>
@@ -37,7 +52,7 @@ const App = () => {
       {/* <Multiobj/>  */}
      {/* <UserManagement/> */}
       {/* <Site/> */}
-     <Practice/>
+     {/* <Practice/> */}
      {/* <Api/> */}
      {/* <Timer/> */}
     {/* <Useeffect/> */}
@@ -46,6 +61,11 @@ const App = () => {
     {/* <Todoref/> */}
     {/* <Focus/> */}
    {/* <Formvali/> */}
+   {/* <Textspeed/> */}
+   {/* <Practext/> */}
+  <Todoprac/>
+ 
+  {/* <UserWith isLoading={loading} user={user}/> */}
     </div>
   );
 };

@@ -106,8 +106,7 @@ const btnStyle = {
   boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
 };
 
-// Optional: Add hover effect with CSS-in-JS (not directly possible with inline styles)
-// If you want hover animations, better to use external CSS or styled-components.
+
 
 export default Counter;
 
