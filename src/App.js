@@ -20,7 +20,8 @@ import Practext from './components/Practext';
 import Todoprac from './components/Todoprac';
 import Withloading from './components/Withloading';
 import UserList from './components/UserList';
-
+import Navbar from './components/Navbar';
+import {Routes,Route} from "react-router-dom"
 
 const UserWith=Withloading(UserList)
 const App = () => {
@@ -63,9 +64,15 @@ const App = () => {
    {/* <Formvali/> */}
    {/* <Textspeed/> */}
    {/* <Practext/> */}
-  <Todoprac/>
+  {/* <Todoprac/> */}
  
   {/* <UserWith isLoading={loading} user={user}/> */}
+    <Navbar/>
+  <Routes>
+    <Route path='/Todoprac' element={<Todoprac/>}/>
+    <Route path='/Practext' element={<Practext/>}/>
+    <Route path='/Focus' element={<Focus/>}/>
+  </Routes>
     </div>
   );
 };

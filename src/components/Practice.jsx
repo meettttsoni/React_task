@@ -1,33 +1,36 @@
-import React, { useState} from "react";
+import React, { useEffect, useState } from "react";
 
-const Practice = () => {
-  const [data, setdata] = useState({ email:'',
-  password:''});
-  const [list, setlist] = useState([]);
+export default function Todoprac() {
+  const sort=JSON.parse(localStorage.getItem('user')) || []
+  const [data, setdata] = useState({ name: "", email: "" });
+  const [list, setlist] = useState(sort);
   const [edit, setedit] = useState(null);
 
+  useEffect(()=>{
+    localStorage.setItem('user',JSON.stringify(list))
+  },[list])
 
   function handle(e) {
     setdata({ ...data, [e.target.name]: e.target.value });
   }
-  function submit(index) {
+  function submit() {
     if (edit !== null) {
-      const updatelist = [...list];
-      updatelist[edit] = data;
-      setlist(updatelist);
+      const u = [...list];
+      u[edit] = data;
+      setlist(u);
       setedit(null);
     } else {
       setlist([...list, data]);
     }
 
-    setdata({ email: "", password: "" });
+    setdata({ name: "", email: "" });
   }
   function del(index) {
-    const updatelist = [...list];
-    updatelist.splice(index, 1);
-    setlist(updatelist);
+    const u = [...list];
+    u.splice(index, 1);
+    setlist(u);
   }
-  function handeledit(index) {
+  function edi(index) {
     setdata(list[index]);
     setedit(index);
   }
@@ -35,32 +38,34 @@ const Practice = () => {
     <div>
       <input
         type="text"
-        name="email"
-        value={data.email}
-        placeholder="email"
+        name="name"
+        placeholder="name"
         onChange={handle}
+        value={data.name}
       />
       <input
         type="text"
-        name="password"
-        value={data.password}
-        placeholder="password"
+        name="email"
+        placeholder="email"
         onChange={handle}
+        value={data.email}
       />
       <button onClick={submit}>add</button>
       <ul>
         {list.map((li, index) => (
           <li>
-            {li.email}-{li.password}
-            <button onClick={() => handeledit(index)}>edit</button>
+            {li.name} {li.email}
             <button onClick={() => del(index)}>delete</button>
+            <button
+              onClick={() => {
+                edi(index);
+              }}
+            >
+              edit
+            </button>
           </li>
         ))}
       </ul>
     </div>
   );
-};
-
-export default Practice;
-
-
+}

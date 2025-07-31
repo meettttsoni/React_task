@@ -19,10 +19,10 @@ export default function Practext() {
         timer.current=null
         setshow(true)
 
-        setTimeout(()=>{
-            setshow(false)
-            settext('')
-        },3000)
+       setTimeout(()=>{
+        setshow(false)
+        settext('')
+       },3000)
     }
     useEffect(()=>{
         const word=text.trim().split().length;
@@ -33,17 +33,17 @@ export default function Practext() {
     const char=text.replace(/\s/g,'').length;
   return (
     <div>
-      <textarea onChange={handle} value={text}></textarea>
-      <button onClick={submit}>add</button>
-      {show && (
+    <textarea onChange={handle} value={text} placeholder='hy'></textarea>
+    <button onClick={submit}>add</button>
+    {show &&(
         <>
             <p>wpm:{wpm}</p>
             <p>char:{char}</p>
-            <p>time:{second}second</p>
+            <p>time:{second} second</p>
         </>
-      )
+    )
 
-      }
+    }
     </div>
   )
 }
