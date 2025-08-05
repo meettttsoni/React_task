@@ -1,0 +1,222 @@
+--------------------------------- Page.jsx -------------------------------
+
+import React from 'react'
+import Navigation from './Navigation'; 
+import Slidercaro from './Slidercaro';
+import Blog from './Blog';
+import Footer from './Footer';
+
+export default function Page() {
+  return (
+    <div>
+      <Navigation/>
+ <Slidercaro/>
+ <Blog/>
+ <Footer/>
+    </div>
+  )
+}
+
+--------------------------------- Navigation.jsx -------------------------------
+
+
+import React from 'react';
+import { Navbar,Nav,Container,NavDropdown, Button,} from 'react-bootstrap';
+
+export default function Navigation() {
+  return (
+    <Navbar expand="lg"  fixed="top" style={{ backgroundColor: '#0d1b2a' }} className="shadow-sm py-3">
+      <Container>
+        <Navbar.Brand href="#home" className="fw-bold fs-4" style={{ color: '#00b4d8' }}>
+          K R A T
+        </Navbar.Brand>
+
+        <Navbar.Toggle aria-controls="main-navbar" className="bg-light" />
+
+        <Navbar.Collapse id="main-navbar">
+          <Nav className="me-auto ms-3">
+            <Nav.Link href="#home" className="text-light mx-2">Home</Nav.Link>
+            <Nav.Link href="#features" className="text-light mx-2">Features</Nav.Link>
+            <Nav.Link href="#pricing" className="text-light mx-2">Pricing</Nav.Link>
+
+            <NavDropdown title={<span className="text-light">Resources</span>} id="nav-dropdown">
+              <NavDropdown.Item href="#docs">Docs</NavDropdown.Item>
+              <NavDropdown.Item href="#blog">Blog</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#support">Support</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+
+          <div className="d-flex gap-2">
+            <Button variant="outline-light" size="sm">Login</Button>
+            <Button size="sm" style={{ background: '#00b4d8', border: 'none' }}>
+              Sign Up
+            </Button>
+          </div>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+}
+
+
+--------------------------------- Slidercaro.jsx -------------------------------
+
+import React from 'react';
+import { Carousel } from 'react-bootstrap';
+
+export default function Slidercaro() {
+  return (
+    <Carousel interval={3000} fade pause="hover">
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          style={{ height: '670px', objectFit: 'cover' }}
+          src="https://images.squarespace-cdn.com/content/v1/613ef8a0a3de987d28d14431/12dd2342-bc33-44d1-8e30-1a764d8974a1/20230610102019_1.jpg"
+          alt="First slide"
+        />
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          style={{ height: '670px', objectFit: 'cover' }}
+          src="https://images.alphacoders.com/133/1330611.png"
+          alt="Second slide"
+        />
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          style={{ height: '670px', objectFit: 'cover' }}
+          src="https://pbs.twimg.com/media/FxY2C9UaQAEa8Y1.jpg:large"
+          alt="Third slide"
+        />
+      </Carousel.Item>
+    </Carousel>
+  );
+}
+
+--------------------------------- Blog.jsx -------------------------------
+
+import React from "react";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+
+const blogPosts = [
+  {
+    id: 1,
+    title: "Ramesh Chauhan – The UI/UX Visionary",
+    description:
+      "Meet is a creative UI/UX developer with a strong command of HTML, CSS, and modern JavaScript. He loves turning ideas into user-friendly designs and believes in clean code with beautiful interfaces.",
+    image:
+      "https://hdstockimages.com/wp-content/uploads/2024/11/old-man-wearing-business-costume_23-2150833782.jpg",
+    date: "August 4, 2025",
+  },
+  {
+    id: 2,
+    title: "Anjali Patel – Frontend Enthusiast",
+    description:
+      "Anjali is a frontend specialist focused on responsive design and component-based architecture using React. She enjoys working on intuitive layouts and seamless user experiences.",
+    image:
+      "https://t4.ftcdn.net/jpg/10/17/46/67/360_F_1017466748_sPimgAiwEJECag85DWHsrufuLsugsh6b.jpg",
+    date: "August 3, 2025",
+  },
+  {
+    id: 3,
+    title: "Ravi Patel – JavaScript Guru",
+    description:
+      "Ravi is a JavaScript developer passionate about building fast and scalable web apps. He mentors new developers and contributes to open-source tools for modern frontend frameworks.",
+    image: "https://cdn.koreapost.com/news/photo/202109/24542_28815_13.jpg",
+    date: "August 1, 2025",
+  },
+];
+
+export default function Blog() {
+  return (
+    <Container className="my-5">
+      <h2 className="text-center mb-4">Meet Our Developers</h2>
+      <Row>
+        {blogPosts.map((post) => (
+          <Col key={post.id} md={4} sm={12} className="mb-4">
+            <Card className="h-100 shadow-lg border-0">
+              <Card.Img
+                variant="top"
+                src={post.image}
+                alt={post.title}
+                style={{
+                  height: "280px",
+                  objectFit: "contain",
+                  objectPosition: "center",
+                  backgroundColor: "#f8f9fa",
+                }}
+              />
+
+              <Card.Body>
+                <Card.Title>{post.title}</Card.Title>
+                <Card.Text>{post.description.slice(0, 120)}...</Card.Text>
+                <Button variant="dark">Read More</Button>
+              </Card.Body>
+              <Card.Footer>
+                <small className="text-muted">Published on {post.date}</small>
+              </Card.Footer>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  );
+}
+
+
+
+--------------------------------- Footer.jsx -------------------------------
+
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+
+export default function Footer() {
+  return (
+    <footer className="bg-dark text-light pt-5 pb-3 mt-5">
+      <Container>
+        <Row className="mb-4">
+          
+          <Col md={4} sm={12} className="mb-4">
+            <h5 className="fw-bold">👨‍💻 K R A T Developers</h5>
+            <p>
+              We are passionate developers who craft user-friendly websites with modern technologies like React, Bootstrap, and AI-based tools.
+            </p>
+          </Col>
+
+        
+          <Col md={4} sm={12} className="mb-4">
+            <h5 className="fw-bold">🔗 Quick Links</h5>
+            <ul className="list-unstyled">
+              <li><a href="#home" className="text-light text-decoration-none">Home</a></li>
+              <li><a href="#about" className="text-light text-decoration-none">About</a></li>
+              <li><a href="#blogs" className="text-light text-decoration-none">Blogs</a></li>
+              <li><a href="#contact" className="text-light text-decoration-none">Contact</a></li>
+            </ul>
+          </Col>
+
+       
+          <Col md={4} sm={12} className="mb-4">
+            <h5 className="fw-bold">📞 Contact</h5>
+            <p>Email: support@k r a t.com</p>
+            <p>Phone: +91-98765-43210</p>
+            <p>Address: Ahmedabad, Gujarat, India</p>
+          </Col>
+        </Row>
+
+      
+        <hr className="border-light" />
+        <Row>
+          <Col className="text-center">
+            <small>&copy; {new Date().getFullYear()} Visionary Team. All rights reserved.</small>
+          </Col>
+        </Row>
+      </Container>
+    </footer>
+  );
+}
+

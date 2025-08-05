@@ -7,6 +7,7 @@ export default function Navbar() {
       <Link to='/Todoprac'>todo</Link>
       <Link to='/Practext'>Practext</Link>
       <Link to='/Focus'>Focus</Link>
+      <Link to='/Product'>product</Link>
     </div>
   )
 }

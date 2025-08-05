@@ -22,6 +22,9 @@ import Withloading from './components/Withloading';
 import UserList from './components/UserList';
 import Navbar from './components/Navbar';
 import {Routes,Route} from "react-router-dom"
+import Product from './components/Product';
+import Page from './components/Page';
+import Api2 from './components/Api2';
 
 const UserWith=Withloading(UserList)
 const App = () => {
@@ -54,7 +57,6 @@ const App = () => {
      {/* <UserManagement/> */}
       {/* <Site/> */}
      {/* <Practice/> */}
-     {/* <Api/> */}
      {/* <Timer/> */}
     {/* <Useeffect/> */}
     {/* <Fetch/> */}
@@ -72,7 +74,15 @@ const App = () => {
     <Route path='/Todoprac' element={<Todoprac/>}/>
     <Route path='/Practext' element={<Practext/>}/>
     <Route path='/Focus' element={<Focus/>}/>
+    <Route path='/Product' element={<Product/>}>
+    <Route path='Countt' element={<Countt/>}/>
+    <Route path='Obj' element={<Obj/>}/>
+
+    </Route>
   </Routes>
+  {/* <Page/> */}
+  {/* <Api/> */}
+{/* <Api2/> */}
     </div>
   );
 };

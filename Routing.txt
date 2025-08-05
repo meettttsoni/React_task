@@ -1,0 +1,48 @@
+<Navbar/>
+  <Routes>
+    <Route path='/Todoprac' element={<Todoprac/>}/>
+    <Route path='/Practext' element={<Practext/>}/>
+    <Route path='/Focus' element={<Focus/>}/>
+    <Route path='/Product' element={<Product/>}>
+    <Route path='Countt' element={<Countt/>}/>
+    <Route path='Obj' element={<Obj/>}/>
+
+    </Route>
+  </Routes>
+
+  --------------------Navbar.jsx-------------
+
+  import React from 'react'
+import { Link } from 'react-router-dom'
+
+export default function Navbar() {
+  return (
+    <div>
+      <Link to='/Todoprac'>todo</Link>
+      <Link to='/Practext'>Practext</Link>
+      <Link to='/Focus'>Focus</Link>
+      <Link to='/Product'>product</Link>
+    </div>
+  )
+}
+
+----------------------Product.jsx-----------------
+
+import React from 'react'
+import { Link, Outlet } from 'react-router-dom'
+
+export default function Product() {
+  return (
+    <div>
+    <div>
+      <Link to="Countt">Counttt</Link>
+      <Link to="Obj">object</Link>
+     
+    </div>
+    <div>
+        <Outlet/>
+    </div>
+    </div>
+  )
+}
+

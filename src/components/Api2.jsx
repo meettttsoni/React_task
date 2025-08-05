@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-export default function Api() {
+export default function Api2() {
   const [text, setText] = useState({
     id: "",
     name: "",
@@ -14,7 +14,7 @@ export default function Api() {
   }, []);
 
   const fetchApi = async () => {
-    const info = await axios.get("http://localhost:3000/product");
+    const info = await axios.get("http://localhost:5000/data");
     setProduct(info.data);
   };
 
@@ -27,12 +27,12 @@ export default function Api() {
 
     if (edit) {
       // Update
-      await axios.put(`http://localhost:3000/product/${edit}`, text);
+      await axios.put(`http://localhost:5000/data/${edit}`, text);
 
       setEditId(null);
     } else {
       // Create
-      await axios.post("http://localhost:3000/product", text);
+      await axios.post("http://localhost:5000/data", text);
     }
 
     setText({
@@ -44,7 +44,7 @@ export default function Api() {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:3000/product/${id}`);
+    await axios.delete(`http://localhost:5000/data/${id}`);
     fetchApi();
   };
   const handleEdit = (item) => {
