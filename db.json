@@ -1,13 +1,181 @@
 {
-  "product": [
+  "data": [
     {
-      "id": "1",
-      "name": "sss"
+      "id": 1,
+      "name": "Black Hoodie",
+      "price": "1500",
+      "category": "hoodie",
+      "img": "https://pronk.in/cdn/shop/products/343_0a2bf848-46e0-40fb-a497-34d1e6847708.jpg?v=1673684171"
     },
     {
-      "id": "a",
-      "name": "a222",
-      "price": "a"
+      "id": 2,
+      "name": "White Hoodie",
+      "price": "1800",
+      "category": "hoodie",
+      "img": "https://www.bonkerscorner.com/cdn/shop/files/red-signature-oversized-heavyweight-hoodie-fleece-xs-bonkerscorner-store-33689144623204.jpg?v=1728983063"
+    },
+    {
+      "id": 3,
+      "name": "Printed Hoodie",
+      "price": "2000",
+      "category": "hoodie",
+      "img": "https://www.lazyhippos.in/cdn/shop/files/aestheticmaroonhoodiefemalefront2.webp?v=1697834960&width=1946"
+    },
+    {
+      "id": 4,
+      "name": "Oversized Hoodie",
+      "price": "2200",
+      "category": "hoodie",
+      "img": "https://muselot.in/cdn/shop/products/Black-plain-crop-hoodie_c84f0a7a-a111-4e2c-a13d-051bc5d16dbe.jpg?v=1658403130"
+    },
+    {
+      "id": 5,
+      "name": "Smart Watch",
+      "price": "2500",
+      "category": "watch",
+      "img": "https://rukminim2.flixcart.com/image/704/844/xif0q/smartwatch/k/r/8/49-smart-watch-t-800-orange-android-ios-satyam-traders-yes-original-imagvht9cwnpwsgw.jpeg?q=90&crop=false"
+    },
+    {
+      "id": 6,
+      "name": "Analog Watch",
+      "price": "1500",
+      "category": "watch",
+      "img": "https://www.fastrack.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw7b940fed/images/Fastrack/Catalog/3287KL01_1.jpg?sw=600&sh=600"
+    },
+    {
+      "id": 7,
+      "name": "Digital Watch",
+      "price": "2000",
+      "category": "watch",
+      "img": "https://hammeronline.in/cdn/shop/files/Hammerglidebluetoothcallingsmartwatch_1.webp?v=1694851875"
+    },
+    {
+      "id": 8,
+      "name": "Luxury Watch",
+      "price": "5000",
+      "category": "watch",
+      "img": "https://nordgreen.co.in/cdn/shop/files/female-bestseller_half-block_2_2160x_08c646dd-7df2-4078-bf3f-8581c3b26b29_1200x.webp?v=1692956286"
+    },
+    {
+      "id": 9,
+      "name": "Blue Denim Jeans",
+      "price": "1200",
+      "category": "jeans",
+      "img": "https://image.hm.com/assets/hm/db/7a/db7a9f1af8e95724761923511936c800315adc6a.jpg?imwidth=2160"
+    },
+    {
+      "id": 10,
+      "name": "Black Slim Fit Jeans",
+      "price": "1500",
+      "category": "jeans",
+      "img": "https://theclothingfactory.in/cdn/shop/files/Theclothing-23-08-2325420_128de7ee-1f9a-4e61-90e3-eb252783c64c.jpg?v=1694109920"
+    },
+    {
+      "id": 11,
+      "name": "Ripped Jeans",
+      "price": "2000",
+      "category": "jeans",
+      "img": "https://www.taramajeans.com/cdn/shop/files/B-15_1_1800x1800.jpg?v=1742633243"
+    },
+    {
+      "id": 12,
+      "name": "Baggy Jeans",
+      "price": "1800",
+      "category": "jeans",
+      "img": "https://images.meesho.com/images/products/463024826/dcunp_512.webp?width=512"
+    }
+  ],
+
+  "hoodie": [
+    {
+      "id": 1,
+      "name": "Black Hoodie",
+      "price": "1500",
+      "category": "hoodie",
+      "img": "https://pronk.in/cdn/shop/products/343_0a2bf848-46e0-40fb-a497-34d1e6847708.jpg?v=1673684171"
+    },
+    {
+      "id": 2,
+      "name": "White Hoodie",
+      "price": "1800",
+      "category": "hoodie",
+      "img": "https://www.bonkerscorner.com/cdn/shop/files/red-signature-oversized-heavyweight-hoodie-fleece-xs-bonkerscorner-store-33689144623204.jpg?v=1728983063"
+    },
+    {
+      "id": 3,
+      "name": "Printed Hoodie",
+      "price": "2000",
+      "category": "hoodie",
+      "img": "https://www.lazyhippos.in/cdn/shop/files/aestheticmaroonhoodiefemalefront2.webp?v=1697834960&width=1946"
+    },
+    {
+      "id": 4,
+      "name": "Oversized Hoodie",
+      "price": "2200",
+      "category": "hoodie",
+      "img": "https://muselot.in/cdn/shop/products/Black-plain-crop-hoodie_c84f0a7a-a111-4e2c-a13d-051bc5d16dbe.jpg?v=1658403130"
+    }
+  ],
+
+  "watch": [
+    {
+      "id": 1,
+      "name": "Smart Watch",
+      "price": "2500",
+      "category": "watch",
+      "img": "https://rukminim2.flixcart.com/image/704/844/xif0q/smartwatch/k/r/8/49-smart-watch-t-800-orange-android-ios-satyam-traders-yes-original-imagvht9cwnpwsgw.jpeg?q=90&crop=false"
+    },
+    {
+      "id": 2,
+      "name": "Analog Watch",
+      "price": "1500",
+      "category": "watch",
+      "img": "https://www.fastrack.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw7b940fed/images/Fastrack/Catalog/3287KL01_1.jpg?sw=600&sh=600"
+    },
+    {
+      "id": 3,
+      "name": "Digital Watch",
+      "price": "2000",
+      "category": "watch",
+      "img": "https://hammeronline.in/cdn/shop/files/Hammerglidebluetoothcallingsmartwatch_1.webp?v=1694851875"
+    },
+    {
+      "id": 4,
+      "name": "Luxury Watch",
+      "price": "5000",
+      "category": "watch",
+      "img": "https://nordgreen.co.in/cdn/shop/files/female-bestseller_half-block_2_2160x_08c646dd-7df2-4078-bf3f-8581c3b26b29_1200x.webp?v=1692956286"
+    }
+  ],
+
+  "jeans": [
+    {
+      "id": 1,
+      "name": "Blue Denim Jeans",
+      "price": "1200",
+      "category": "jeans",
+      "img": "https://image.hm.com/assets/hm/db/7a/db7a9f1af8e95724761923511936c800315adc6a.jpg?imwidth=2160"
+    },
+    {
+      "id": 2,
+      "name": "Black Slim Fit Jeans",
+      "price": "1500",
+      "category": "jeans",
+      "img": "https://theclothingfactory.in/cdn/shop/files/Theclothing-23-08-2325420_128de7ee-1f9a-4e61-90e3-eb252783c64c.jpg?v=1694109920"
+    },
+    {
+      "id": 3,
+      "name": "Ripped Jeans",
+      "price": "2000",
+      "category": "jeans",
+      "img": "https://www.taramajeans.com/cdn/shop/files/B-15_1_1800x1800.jpg?v=1742633243"
+    },
+    {
+      "id": 4,
+      "name": "Baggy Jeans",
+      "price": "1800",
+      "category": "jeans",
+      "img": "https://images.meesho.com/images/products/463024826/dcunp_512.webp?width=512"
     }
   ]
 }

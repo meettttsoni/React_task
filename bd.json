@@ -1,3 +1,182 @@
 {
-    "data":[]
-}
+    "data": [
+      {
+        "id": 1,
+        "name": "Red Sweatshirt",
+        "price": "1500",
+        "category": "sweatshirt",
+        "img": "https://assets.myntassets.com/dpr_1.5,q_30,w_400,c_limit,fl_progressive/assets/images/24718644/2024/10/1/261fd815-1a15-432c-afac-baa4b126a2ed1727766016684-US-Polo-Assn-Women-Round-Neck-Cotton-Sweatshirt-981172776601-1.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Grey Sweatshirt",
+        "price": "1800",
+        "category": "sweatshirt",
+        "img": "https://assets.myntassets.com/w_412,q_30,dpr_3,fl_progressive,f_webp/assets/images/25154390/2023/9/25/2d330ce2-d3d1-4fb8-9fe3-42e0ffea02f81695647436879HMRelaxed-FitDrop-ShoulderSweatshirt1.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Graphic Sweatshirt",
+        "price": "2000",
+        "category": "sweatshirt",
+        "img": "https://5.imimg.com/data5/ANDROID/Default/2024/9/451055285/JF/AO/IW/27619883/back-sweatshirt-mockup-0041-4-png.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Oversized Sweatshirt",
+        "price": "2200",
+        "category": "sweatshirt",
+        "img": "https://shop.teamsg.in/cdn/shop/files/1_7cd17bb9-f1cc-43d8-904c-9d73f1ff7553.jpg?v=1726045557"
+      },
+      {
+        "id": 5,
+        "name": "Fitness Band",
+        "price": "2500",
+        "category": "gadget",
+        "img": "https://cmsprod.garmin-india.com/media/40045-Fitness-Tracking-Bands.webp"
+      },
+      {
+        "id": 6,
+        "name": "Classic Analog Watch",
+        "price": "1500",
+        "category": "gadget",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9AAg02BEBtJNZ21YOyVNzMN6rFeH1_iJ3vBWI4riVqX86ajE8YUCuRrcvnzax07bfnoM&usqp=CAU"
+      },
+      {
+        "id": 7,
+        "name": "Smart Digital Watch",
+        "price": "2000",
+        "category": "gadget",
+        "img": "https://cdn.mos.cms.futurecdn.net/Pk5ydxYo6ty2Q4SX9vznP6-1200-80.jpg"
+      },
+      {
+        "id": 8,
+        "name": "Premium Wristwatch",
+        "price": "5000",
+        "category": "gadget",
+        "img": "https://i.gadgets360cdn.com/large/whoop_40_flipkart_1727272019888.jpg"
+      },
+      {
+        "id": 9,
+        "name": "Blue Straight Jeans",
+        "price": "1200",
+        "category": "pants",
+        "img": "https://assets.ajio.com/medias/sys_master/root/20241109/veEh/672e6853f9b8ef490b0ff364/-473Wx593H-700595679-brown-MODEL.jpg"
+      },
+      {
+        "id": 10,
+        "name": "Black Slim Jeans",
+        "price": "1500",
+        "category": "pants",
+        "img": "https://freakins.com/cdn/shop/files/09june2024_6810-Edit.jpg?v=1749907028"
+      },
+      {
+        "id": 11,
+        "name": "Distressed Jeans",
+        "price": "2000",
+        "category": "pants",
+        "img": "https://littleboxindia.com/cdn/shop/files/28d_d3808282-d2fc-45e4-88eb-23cb4910b970.jpg?v=1740750143&width=1024"
+      },
+      {
+        "id": 12,
+        "name": "Loose Fit Jeans",
+        "price": "1800",
+        "category": "pants",
+        "img": "https://media.powerlook.in/catalog/product/1/0/103-1052860.jpg"
+      }
+    ],
+  
+    "sweatshirt": [
+      {
+        "id": 1,
+        "name": "Red Sweatshirt",
+        "price": "1500",
+        "category": "sweatshirt",
+        "img": "https://assets.myntassets.com/dpr_1.5,q_30,w_400,c_limit,fl_progressive/assets/images/24718644/2024/10/1/261fd815-1a15-432c-afac-baa4b126a2ed1727766016684-US-Polo-Assn-Women-Round-Neck-Cotton-Sweatshirt-981172776601-1.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Grey Sweatshirt",
+        "price": "1800",
+        "category": "sweatshirt",
+        "img": "https://assets.myntassets.com/w_412,q_30,dpr_3,fl_progressive,f_webp/assets/images/25154390/2023/9/25/2d330ce2-d3d1-4fb8-9fe3-42e0ffea02f81695647436879HMRelaxed-FitDrop-ShoulderSweatshirt1.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Graphic Sweatshirt",
+        "price": "2000",
+        "category": "sweatshirt",
+        "img": "https://5.imimg.com/data5/ANDROID/Default/2024/9/451055285/JF/AO/IW/27619883/back-sweatshirt-mockup-0041-4-png.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Oversized Sweatshirt",
+        "price": "2200",
+        "category": "sweatshirt",
+        "img": "https://shop.teamsg.in/cdn/shop/files/1_7cd17bb9-f1cc-43d8-904c-9d73f1ff7553.jpg?v=1726045557"
+      }
+    ],
+  
+    "gadget": [
+      {
+        "id": 1,
+        "name": "Fitness Band",
+        "price": "2500",
+        "category": "gadget",
+        "img": "https://cmsprod.garmin-india.com/media/40045-Fitness-Tracking-Bands.webp"
+      },
+      {
+        "id": 2,
+        "name": "Classic Analog Watch",
+        "price": "1500",
+        "category": "gadget",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9AAg02BEBtJNZ21YOyVNzMN6rFeH1_iJ3vBWI4riVqX86ajE8YUCuRrcvnzax07bfnoM&usqp=CAU"
+      },
+      {
+        "id": 3,
+        "name": "Smart Digital Watch",
+        "price": "2000",
+        "category": "gadget",
+        "img": "https://cdn.mos.cms.futurecdn.net/Pk5ydxYo6ty2Q4SX9vznP6-1200-80.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Premium Wristwatch",
+        "price": "5000",
+        "category": "gadget",
+        "img": "https://i.gadgets360cdn.com/large/whoop_40_flipkart_1727272019888.jpg"
+      }
+    ],
+  
+    "pants": [
+      {
+        "id": 1,
+        "name": "Blue Straight Jeans",
+        "price": "1200",
+        "category": "pants",
+        "img": "https://assets.ajio.com/medias/sys_master/root/20241109/veEh/672e6853f9b8ef490b0ff364/-473Wx593H-700595679-brown-MODEL.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Black Slim Jeans",
+        "price": "1500",
+        "category": "pants",
+        "img": "https://freakins.com/cdn/shop/files/09june2024_6810-Edit.jpg?v=1749907028"
+      },
+      {
+        "id": 3,
+        "name": "Distressed Jeans",
+        "price": "2000",
+        "category": "pants",
+        "img": "https://littleboxindia.com/cdn/shop/files/28d_d3808282-d2fc-45e4-88eb-23cb4910b970.jpg?v=1740750143&width=1024"
+      },
+      {
+        "id": 4,
+        "name": "Loose Fit Jeans",
+        "price": "1800",
+        "category": "pants",
+        "img": "https://media.powerlook.in/catalog/product/1/0/103-1052860.jpg"
+      }
+    ]
+  }
+  

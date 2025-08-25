@@ -1,92 +1,74 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 export default function Api() {
-  const [text, setText] = useState({
-    id: "",
-    name: "",
-    price: "",
-  });
-  const [product, setProduct] = useState([]);
-  const [edit, setEditId] = useState(null);
-
-  useEffect(() => {
+  const[data,setdata]=useState({name:'',age:'',price:''})
+  const[list,setlist]=useState([])
+  const[edit,setedit]=useState(null)
+  const[search,setsearch]=useState('')
+  const [sortprice, setsortPrice] = useState("")
+  useEffect(()=>{
     fetchApi();
-  }, []);
-
-  const fetchApi = async () => {
-    const info = await axios.get("http://localhost:3000/product");
-    setProduct(info.data);
-  };
-
-  function AddText(e) {
-    setText({ ...text, [e.target.name]: e.target.value });
+  },[search])
+  const fetchApi=async()=>{
+    const info=await axios.get("http://localhost:3000/product",{
+      params:{name:search}
+    })
+    setlist(info.data)
   }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (edit) {
-      // Update
-      await axios.put(`http://localhost:3000/product/${edit}`, text);
-
-      setEditId(null);
-    } else {
-      // Create
-      await axios.post("http://localhost:3000/product", text);
+  const sortedProducts = [...list].sort((a, b) => {
+    if (sortprice === "lowToHigh") {
+        return Number(a.price) - Number(b.price);
+    } else if (sortprice === "highToLow") {
+        return Number(b.price) - Number(a.price);
     }
+});
 
-    setText({
-      id: "",
-      name: "",
-      price: "",
-    });
+  function handle(e){
+    setdata({...data,[e.target.name]:e.target.value})
+  }
+  const submit=async(e)=>{
+    e.preventDefault();
+    if(edit){
+      await axios.put(`http://localhost:3000/product/${edit}`,data)
+    }
+    else{
+    await axios.post("http://localhost:3000/product",data);
+    }
+    setdata({name:'',age:'',price:''})
     fetchApi();
-  };
-
-  const handleDelete = async (id) => {
+  }
+  const del=async(id)=>{
     await axios.delete(`http://localhost:3000/product/${id}`);
-    fetchApi();
-  };
-  const handleEdit = (item) => {
-    setText(item);
-    setEditId(item.id);
-  };
+    fetchApi()
+  }
+  const edi=async(i)=>{
+    setdata(i)
+    setedit(i.id)
+  }
 
   return (
     <div>
-      <h1>Api</h1>
-      <form action="" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="enter id"
-          name="id"
-          value={text.id}
-          onChange={AddText}
-        />
-        <input
-          type="text"
-          placeholder="enter name"
-          name="name"
-          value={text.name}
-          onChange={AddText}
-        />
-        <input
-          type="text"
-          placeholder="enter price"
-          name="price"
-          value={text.price}
-          onChange={AddText}
-        />
-        <input type="submit" value={edit ? "Update" : "Add"} />
-      </form>
-
-      {product.map((el, i) => (
-        <li key={el.id}>
-          {el.name} - ₹{el.price}{" "}
-          <button onClick={() => handleEdit(el)}>Edit</button>
-          <button onClick={() => handleDelete(el.id)}>Delete</button>
-        </li>
-      ))}
+      <input type="text" name='search' value={search} onChange={((e)=>{setsearch(e.target.value)})} />
+      <select onChange={(e) => setsortPrice(e.target.value)} value={sortprice}>
+                <option value="">Sort By Price</option>
+                <option value="lowToHigh">Low To high</option>
+                <option value="highToLow">High To Low</option>
+            </select>
+      <input type="text" name='name' placeholder='name' value={data.name} onChange={handle} />
+      <input type="text" name='age' placeholder='age' value={data.age} onChange={handle} />
+      <input type="text" placeholder='enter price' name="price" value={data.price} onChange={handle} />
+      <input type="submit" onClick={submit} />
+      <ul>
+        {sortedProducts.map((i)=>(
+          <li key={i.id}>
+            {i.name}  {i.age} {i.price}
+            
+            <button onClick={()=>del(i.id)}>deleet</button>
+            <button onClick={()=>edi(i)}>edit</button>
+          </li>
+        ))}
+      </ul>
     </div>
-  );
-}
+  )
+        }
+
