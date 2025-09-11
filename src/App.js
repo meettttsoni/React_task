@@ -24,12 +24,26 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Product from "./components/Product";
 import Page from "./components/Page";
-import Api2 from "./components/Api2";
+import Api2 from"./components/Api2"
 import Electro from "./components/Electro";
 import Productinfo from "./components/Productinfo";
 import Category from "./components/Category";
 import All from "./components/All";
 import AAA from "./components/AAA";
+import Sign from "./components/Sign";
+import Todoo from "./components/redux/Todoo"
+import Display from "./components/redux/Display";
+import Todo from "./components/redux1/Todo";
+import Rcounter from "./components/redux1/Rcounter";
+import Cart from "./components/Cart";
+import Click from "./components/Click";
+import Register from "./components/Register";
+import Signin from "./components/Signin";
+import { FirebaseError } from "firebase/app";
+import Firebasedatabase from "./components/Firebasedatabase";
+import Firestore from "./components/Firestore";
+
+
 
 
 const UserWith = Withloading(UserList);
@@ -89,7 +103,7 @@ const App = () => {
       {/* <Route path='Countt' element={<Countt/>}/>
     <Route path='Obj' element={<Obj/>}/> */}
       {/* <Page/> */}
-      <Api/>
+      {/* <Api/> */}
       {/* <Api2/> */}
   
       {/* <Routes>
@@ -97,6 +111,7 @@ const App = () => {
                                     <Route path='/:category' element={<Category/>}/>
                               
                               <Route path='/:category/:id' element={<Productinfo/>}/>
+                              <Route path='/cart' element={<Cart/>}/>
                         </Routes> */}
 
                         {/* <Routes>
@@ -104,6 +119,20 @@ const App = () => {
                                    
                         </Routes> */}
                         {/* <AAA/> */}
+                        {/* <Sign/> */}
+                        {/* <Todoo/>
+                      <Display/> */}
+                        {/* <Todo/>
+                        <Display/> */}
+                        {/* <Rcounter/> */}
+                        {/* <Click/> */}
+                        {/* <Register/> */}
+                        {/* <Signin/> */}
+                        <Firebasedatabase/>
+                        <Firestore/>
+                     
+                     
+                        
     </div>
   );
 };

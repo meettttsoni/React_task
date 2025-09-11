@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import axios from 'axios'
 export default function Api() {
   const[data,setdata]=useState({name:'',age:'',price:''})
@@ -9,12 +9,12 @@ export default function Api() {
   useEffect(()=>{
     fetchApi();
   },[search])
-  const fetchApi=async()=>{
+  const fetchApi=useCallback(async()=>{
     const info=await axios.get("http://localhost:3000/product",{
       params:{name:search}
     })
     setlist(info.data)
-  }
+  })
   const sortedProducts = [...list].sort((a, b) => {
     if (sortprice === "lowToHigh") {
         return Number(a.price) - Number(b.price);
