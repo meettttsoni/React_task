@@ -128,7 +128,7 @@ const App = () => {
                         {/* <Click/> */}
                         {/* <Register/> */}
                         {/* <Signin/> */}
-                        <Firebasedatabase/>
+                        {/* <Firebasedatabase/> */}
                         <Firestore/>
                      
                      

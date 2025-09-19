@@ -24,9 +24,9 @@ export default function Firestore() {
     async function addData() {
         try {
             const docRef = await addDoc(collection(db, "users"), {
-                first: "Urvish",
-                last: "Patel",
-                born: 2004
+                first: "meet",
+                last: "soni",
+                born: 2005
             });
             console.log("Document written with ID: ", docRef.id);
             alert('Success');
